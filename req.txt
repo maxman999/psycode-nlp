@@ -1,0 +1,4 @@
+konlpy
+PyMySQL
+flask
+flask_cors
