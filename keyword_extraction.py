@@ -46,10 +46,10 @@ def extractor(news_df, user_keywords):
     noun_list = [] # 불용어가 제거된 명사들만 수집
     for sentence in sentences_tag:
         for word, tag in sentence:
-            if tag in ['NNG'] and word not in stopwords:
+            if tag in ['NNG'] and len(word) > 1 and word not in stopwords:
                 noun_list.append(word)
     counts = Counter(noun_list)
     tags = counts.most_common(60)
 
-    return tags[0:5]
+    return tags[0:3]
 
